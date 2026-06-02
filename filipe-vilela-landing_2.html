@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filipe Vilela | Consultor Estratégico</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#FFFFFF;
+  --bg:#F6F7F9;
+  --surface:#EDEEF2;
+  --charcoal:#1A1A18;
+  --mid:#4C4C48;
+  --muted:#909089;
+  --border:#DDDCD6;
+  --navy:#162051;
+  --navy-mid:#1E2E6E;
+  --navy-light:#EDF0F7;
+  --navy-border:#C2C9E0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--charcoal);line-height:1.6;font-size:15px}
+
+header{
+  background:var(--white);border-bottom:1px solid var(--border);
+  padding:0.9rem 2rem;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+}
+.logo{font-family:'Libre Baskerville',serif;font-size:1rem;font-weight:700;color:var(--charcoal);letter-spacing:0.01em}
+.logo span{color:var(--navy-mid)}
+.header-cta{
+  background:var(--navy);color:#fff;text-decoration:none;
+  font-size:0.8rem;font-weight:500;padding:0.5rem 1.1rem;
+  border-radius:2px;letter-spacing:0.03em;transition:opacity 0.2s;
+}
+.header-cta:hover{opacity:0.85}
+
+.hero{background:var(--white);padding:3.5rem 2rem 3rem;max-width:680px;margin:0 auto;text-align:left}
+.hero-eyebrow{
+  font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--navy-mid);margin-bottom:1rem;display:block;
+}
+.hero h1{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(2rem,4.5vw,2.9rem);font-weight:700;color:var(--charcoal);
+  line-height:1.2;margin-bottom:1rem;
+}
+.hero h1 em{font-style:italic;color:var(--navy-mid)}
+.hero-sub{font-size:0.95rem;color:var(--mid);max-width:460px;margin-bottom:2rem;font-weight:300;line-height:1.75}
+.hero-cta{
+  display:inline-block;background:var(--navy);color:#fff;text-decoration:none;
+  font-size:0.95rem;font-weight:500;padding:0.85rem 2rem;border-radius:2px;
+  letter-spacing:0.02em;transition:opacity 0.2s,transform 0.15s;
+}
+.hero-cta:hover{opacity:0.88;transform:translateY(-1px)}
+.hero-note{display:block;margin-top:0.6rem;font-size:0.75rem;color:var(--muted)}
+
+.creds{
+  background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:0.9rem 2rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;
+}
+.cred{font-size:0.78rem;color:var(--mid);font-weight:500;display:flex;align-items:center;gap:0.5rem}
+.cred-dot{width:5px;height:5px;border-radius:50%;background:var(--navy-mid);flex-shrink:0}
+
+.inner{max-width:680px;margin:0 auto;padding:0 2rem}
+.section{padding:3rem 0}
+.section+.section{border-top:1px solid var(--border)}
+
+/* LABELS MAIS DESTACADOS */
+.label{
+  font-size:0.72rem;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--navy);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;
+}
+.label::before{
+  content:'';display:block;width:16px;height:2px;background:var(--navy);border-radius:1px;flex-shrink:0;
+}
+
+.pain-lead{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(1.15rem,2.5vw,1.4rem);color:var(--charcoal);font-weight:400;
+  line-height:1.5;margin-bottom:1.5rem;
+}
+.pain-lead strong{font-weight:700}
+
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0.5rem;margin-bottom:1.25rem}
+.q{
+  background:var(--bg);border-left:2px solid var(--navy-mid);
+  padding:0.75rem 1rem;font-size:0.85rem;color:var(--mid);font-style:italic;line-height:1.55;
+  border-radius:0 2px 2px 0;
+}
+.reassurance{font-size:0.85rem;color:var(--muted);font-style:italic}
+
+.obj-box{
+  background:var(--navy-light);border-left:3px solid var(--navy);
+  padding:1.25rem 1.5rem;border-radius:0 3px 3px 0;margin:1.5rem 0 0;
+}
+.obj-label{font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:0.35rem}
+.obj-text{font-family:'Libre Baskerville',serif;font-size:1.1rem;color:var(--charcoal);font-weight:700;line-height:1.4}
+
+.margin-q{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(1.05rem,2vw,1.25rem);color:var(--charcoal);font-weight:700;line-height:1.45;margin-bottom:1.25rem;
+}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem}
+@media(max-width:480px){.cards{grid-template-columns:1fr}}
+.card{background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:1.1rem 1.25rem}
+.card.win{background:var(--navy-light);border-color:var(--navy-border)}
+.card-badge{display:inline-block;background:var(--navy);color:#fff;font-size:0.65rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;padding:0.2rem 0.5rem;border-radius:2px;margin-bottom:0.5rem}
+.card-val{font-family:'Libre Baskerville',serif;font-size:1.4rem;font-weight:700;color:var(--charcoal);margin-bottom:0.15rem}
+.card.win .card-val{color:var(--navy)}
+.card-desc{font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem}
+.card-res{font-size:0.82rem;font-weight:500;color:var(--mid)}
+.card.win .card-res{color:var(--navy-mid)}
+.margin-note{font-size:0.85rem;color:var(--mid);font-style:italic;line-height:1.65;padding-top:0.85rem;border-top:1px solid var(--border)}
+
+.items{list-style:none;margin-bottom:1.5rem}
+.items li{display:flex;align-items:flex-start;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--mid);line-height:1.5}
+.items li:first-child{border-top:1px solid var(--border)}
+.check{width:18px;height:18px;border-radius:50%;background:var(--navy);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center}
+.check svg{width:9px;height:9px;stroke:#fff;stroke-width:2.5;fill:none}
+
+.filter{background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:1.25rem 1.5rem}
+.filter-title{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem}
+.frow{display:flex;gap:0.6rem;font-size:0.85rem;margin-bottom:0.45rem;align-items:flex-start}
+.fno{color:#B03030}.fyes{color:var(--navy);margin-top:0.5rem}
+
+.cta-section{background:var(--navy);padding:3.5rem 2rem;text-align:center}
+.cta-section h2{font-family:'Libre Baskerville',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#fff;margin-bottom:0.75rem;line-height:1.3}
+.cta-section p{font-size:0.88rem;color:rgba(255,255,255,0.45);max-width:380px;margin:0 auto 1.75rem;line-height:1.7;font-weight:300}
+.cta-btn{
+  display:inline-block;background:#fff;color:var(--navy);text-decoration:none;
+  font-size:0.95rem;font-weight:500;padding:0.9rem 2.25rem;border-radius:2px;
+  letter-spacing:0.02em;transition:opacity 0.2s,transform 0.15s;
+}
+.cta-btn:hover{opacity:0.9;transform:translateY(-1px)}
+.cta-fine{margin-top:0.85rem;font-size:0.72rem;color:rgba(255,255,255,0.2)}
+
+footer{background:#0D1640;padding:1.25rem 2rem;text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.2);letter-spacing:0.03em}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero>*{animation:fadeUp 0.55s ease both}
+.hero-eyebrow{animation-delay:0.05s}
+.hero h1{animation-delay:0.13s}
+.hero-sub{animation-delay:0.22s}
+.hero-cta{animation-delay:0.3s}
+.hero-note{animation-delay:0.36s}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Filipe <span>Vilela</span></div>
+  <a href="https://wa.me/5527996111989?text=Olá,%20quero%20melhorar%20meus%20resultados" class="header-cta">Quero melhorar minha margem →</a>
+</header>
+
+<div class="hero">
+  <span class="hero-eyebrow">Consultoria Estratégica</span>
+  <h1>Faturamento é ego.<br><em>Quem paga a conta é o caixa.</em></h1>
+  <p class="hero-sub">Você vende. Mas quanto fica? Trabalho com quem já tem o negócio rodando — e sabe que pode ter resultados melhores.</p>
+  <a href="https://wa.me/5527996111989?text=Olá,%20quero%20melhorar%20meus%20resultados" class="hero-cta">Quero melhorar minha margem →</a>
+  <span class="hero-note">Sem formulário. Conversa direta.</span>
+</div>
+
+<div class="creds">
+  <div class="cred"><div class="cred-dot"></div>+10 anos de resultados em PMEs</div>
+  <div class="cred"><div class="cred-dot"></div>Sócio · RealForte Consultoria (+40 anos de mercado)</div>
+  <div class="cred"><div class="cred-dot"></div>Gestão, margem e resultado real</div>
+</div>
+
+<div style="background:var(--white)">
+<div class="inner">
+
+  <div class="section">
+    <div class="label">Você se reconhece aqui?</div>
+    <p class="pain-lead">Sua empresa não é a única que <strong>sobra menos do que deveria.</strong></p>
+    <div class="quotes">
+      <div class="q">Vendo bem, mas não sei pra onde vai o dinheiro.</div>
+      <div class="q">A empresa vai bem, mas não tiro férias já faz anos.</div>
+      <div class="q">Meu controle é meu extrato bancário.</div>
+      <div class="q">Eu sei quanto faturei. Nunca sei quanto ganhei.</div>
+      <div class="q">É sempre uma ginástica para fechar o mês.</div>
+      <div class="q">Será que posso contratar mais uma pessoa?</div>
+    </div>
+    <p class="reassurance">Isso não é sobre esforço, dedicação ou tempo de mercado. É sobre método.</p>
+    <div class="obj-box">
+      <div class="obj-label">Objetivo</div>
+      <div class="obj-text">Transformar seu faturamento em lucro de verdade.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">A matemática que ninguém mostra</div>
+    <p class="margin-q">É melhor vender R$ 500 mil com margem de 15% ou R$ 650 mil com margem de 10%?</p>
+    <div class="cards">
+      <div class="card win">
+        <div class="card-badge">Mais lucro</div>
+        <div class="card-val">R$ 500 mil</div>
+        <div class="card-desc">Faturamento · Margem 15%</div>
+        <div class="card-res">→ R$ 75.000 lucro bruto</div>
+      </div>
+      <div class="card">
+        <div class="card-val">R$ 650 mil</div>
+        <div class="card-desc">Faturamento · Margem 10%</div>
+        <div class="card-res">→ R$ 65.000 lucro bruto</div>
+      </div>
+    </div>
+    <p class="margin-note">Vender mais, nesse caso, significa deixar R$ 10.000 por mês na mesa — R$ 120.000 por ano. A diferença não está no volume. Está em saber o que realmente dá lucro.</p>
+  </div>
+
+  <div class="section">
+    <div class="label">O que construímos juntos</div>
+    <ul class="items">
+      <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Conhecer o que realmente dá lucro no seu negócio</li>
+      <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Entender a diferença entre faturar, lucrar e sobrar no caixa</li>
+      <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Sair do achômetro e tomar decisões baseadas em dados</li>
+      <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Identificar como compras, precificação e mix de produtos impactam sua margem</li>
+      <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Aumentar a margem sem depender de aumentar o volume de vendas</li>
+      <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Implantar o Mapa de Rentabilidade — clareza sobre cada linha do negócio</li>
+    </ul>
+    <div class="filter">
+      <div class="filter-title">Para quem é — e para quem não é</div>
+      <div class="frow fno"><span>✗</span><span>Não é para quem está começando agora</span></div>
+      <div class="frow fno"><span>✗</span><span>Não é para quem ainda não tem nenhum controle financeiro</span></div>
+      <div class="frow fyes"><span>✓</span><span>É para quem já tem o negócio rodando e sabe que pode ter resultados melhores</span></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="cta-section">
+  <h2>Vender mais não é o objetivo.<br>Sobrar mais é.</h2>
+  <p>Se você quer um caminho seguro para aumentar sua margem e melhorar a última linha — a conversa começa aqui.</p>
+  <a href="https://wa.me/5527996111989?text=Olá,%20quero%20melhorar%20meus%20resultados" class="cta-btn">Quero melhorar minha margem →</a>
+  <p class="cta-fine">Quanto mais você espera, mais caro pode custar.</p>
+</div>
+
+<footer>© 2026 Filipe Vilela · Consultor Estratégico</footer>
+
+</body>
+</html>
